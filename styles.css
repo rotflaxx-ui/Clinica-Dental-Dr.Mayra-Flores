@@ -120,7 +120,7 @@ body{
 @media (max-width:860px){
   .nav-toggle{display:block}
   .menu{
-    position:absolute;inset:64px 12px auto 12px;background:#fff;
+    position:absolute;inset:64px 12px auto 12px;background:#3a5068;
     border:1px solid var(--line);border-radius:14px;padding:12px;
     display:none;flex-direction:column;gap:8px;text-align:center;box-shadow:var(--shadow)
   }
@@ -171,7 +171,7 @@ body{
 .hero .bullets{padding-left:18px;margin:0;color:var(--muted)}
 .hero-art{
   position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);min-height:420px;
-  background:linear-gradient(180deg, var(--accent-2), #fff);
+  background:linear-gradient(180deg, var(--accent-2), #ffffff);
 }
 .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
 .hero-art img.active{opacity:1}
