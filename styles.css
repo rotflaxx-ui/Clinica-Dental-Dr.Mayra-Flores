@@ -123,3 +123,78 @@ body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-fon
 .footer-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .socials{display:flex;gap:10px}
 .socials a{text-decoration:none;color:var(--brand-ink);font-weight:700}
+/* ========== AJUSTES RECOMENDADOS (pegar al final) ========== */
+
+/* 1) Tipografía y ritmo vertical */
+@media (min-width: 1200px){
+  body{ font-size:17px; }
+}
+.section{ padding-block:56px; }
+@media (min-width: 1200px){
+  .section{ padding-block:72px; }
+}
+
+/* 2) Navbar: mejor legibilidad y clics más grandes en mobile */
+.menu a{ font-weight:500; padding:8px 6px; }
+@media (max-width: 860px){
+  .menu a{ padding:10px 12px; }
+}
+
+/* 3) HERO: imagen más controlada y texto con ancho cómodo */
+.hero-copy p{ max-width: 52ch; }
+.hero-art{
+  aspect-ratio: 3/4;          /* era 4/5, esto estiliza más la foto vertical */
+  min-height: 420px;           /* asegura buena presencia en pantallas grandes */
+}
+@media (max-width: 880px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-art{ min-height: 360px; }
+}
+
+/* 4) Cards: elevación y foco en hover */
+.card{ transition: transform .15s ease, box-shadow .15s ease; }
+.card:hover{ transform: translateY(-2px); box-shadow: 0 14px 36px rgba(7,61,59,.10); }
+
+/* 5) BEFORE/AFTER: alturas más consistentes */
+.before-card img{ height: 240px; }
+@media (min-width: 1100px){
+  .before-card img{ height: 260px; }
+}
+
+/* 6) AGENDA: calendario más pequeño a la izquierda + texto a la derecha */
+.agenda-grid{
+  grid-template-columns: 0.8fr 1.2fr;  /* más chico el calendario */
+  gap: 24px;
+}
+.agenda-widget{
+  max-width: 560px;                    /* limita ancho del iframe */
+  margin-inline: 0;                    /* por si había centrado previo */
+}
+.agenda-widget iframe{ height: 520px; }/* antes 640px */
+@media (max-width: 1100px){
+  .agenda-grid{ grid-template-columns: 1fr; }
+  .agenda-widget{ max-width: 100%; }
+  .agenda-widget iframe{ height: 560px; } /* un poco más alto en una columna */
+}
+
+/* 7) QUIÉNES SOMOS: foto IZQUIERDA (desktop), texto derecha */
+.about-grid{ grid-template-columns: 1fr 1fr; }
+.about-photo{ order: 1; }
+.about-copy{ order: 2; }
+@media (max-width: 860px){
+  .about-photo, .about-copy{ order: initial; } /* en mobile queda uno encima del otro */
+}
+
+/* 8) Contacto / Mapa: altura responsiva */
+.map{
+  height: clamp(280px, 38vw, 360px);
+}
+
+/* 9) Botones: feedback más marcado en hover/focus */
+.btn:focus{ outline: 3px solid rgba(11,125,122,.25); outline-offset: 2px; }
+.btn.primary:hover{ filter: brightness(1.06); transform: translateY(-1px); }
+.btn.ghost:hover{ background: rgba(11,125,122,.06); }
+
+/* 10) Pequeños refinamientos de color/contraste */
+.section-sub{ color: #5a6b69; }            /* un pelín más oscuro que var(--muted) */
+.link:hover{ opacity: 1; text-decoration: underline; }
