@@ -34,25 +34,34 @@
 <body>
   <!-- Barra superior -->
   <header class="nav">
-    <div class="wrap nav-row">
-      <a href="#inicio" class="logo" aria-label="Ir al inicio">
-        <span class="logo-mark" aria-hidden="true"></span>
-        <div class="logo-text">
-          <strong>Clinica Dental</strong>
-          <span>Dr. Mayra Flores </span>
-        </div>
-      </a>
+  <div class="wrap nav-row">
+    <!-- IZQUIERDA: logo -->
+    <a href="#inicio" class="logo" aria-label="Ir al inicio">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <div class="logo-text">
+        <strong>Clinica Dental</strong>
+        <span>Dr. Mayra Flores</span>
+      </div>
+    </a>
+
+    <!-- CENTRO: menú -->
+    <nav id="menu" class="menu" aria-label="Principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#quienes">Quiénes somos</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#before">Casos</a>           <!-- antes/Después → Casos -->
+      <a href="#faq">Preguntas frecuentes</a>                 <!-- corto y claro -->
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- DERECHA: CTA + toggle mobile -->
+    <div class="nav-actions">
+      <a class="btn primary nav-cta wa" data-wa-text="Hola, quiero agendar una cita.">WhatsApp</a>
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
-      <nav id="menu" class="menu" aria-label="Principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#before">Antes/Después</a>
-        <a href="#agenda">Agenda</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contacto">Contacto</a>
-        <a class="btn wa" data-wa-text="Hola, quiero agendar una limpieza dental.">WhatsApp</a>
-      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- HERO -->
   <section id="inicio" class="hero">
@@ -77,49 +86,235 @@
       </figure>
     </div>
   </section>
-
-  <!-- SERVICIOS -->
-  <section id="servicios" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="section-title">Servicios</h2>
-        <p class="section-sub">Planes claros. Tratamientos personalizados.</p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Limpieza y Profilaxis</h3>
-          <p>Elimina sarro y placa para prevenir caries y mal aliento. Recomendado cada 6 meses.</p>
-          <a class="link wa" data-wa-text="Quiero limpieza dental y profilaxis.">Cotizar por WhatsApp →</a>
-        </article>
-        <article class="card">
-          <h3>Resinas Estéticas</h3>
-          <p>Reconstrucciones del color del diente, sin metal y con acabado natural.</p>
-          <a class="link wa" data-wa-text="Quiero cotizar resina estética.">Cotizar por WhatsApp →</a>
-        </article>
-        <article class="card">
-          <h3>Ortodoncia</h3>
-          <p>Brackets o alineadores. Diagnóstico digital y plan de tratamiento por etapas.</p>
-          <a class="link wa" data-wa-text="Me interesa ortodoncia.">Cotizar por WhatsApp →</a>
-        </article>
-        <article class="card">
-          <h3>Blanqueamiento</h3>
-          <p>Resultados visibles en 1 sesión. Procedimientos seguros para tu esmalte.</p>
-          <a class="link wa" data-wa-text="Quiero blanqueamiento dental.">Cotizar por WhatsApp →</a>
-        </article>
-        <article class="card">
-          <h3>Endodoncia</h3>
-          <p>Tratamiento de conductos para salvar piezas con dolor o infección.</p>
-          <a class="link wa" data-wa-text="Necesito endodoncia / tratamiento de conductos.">Cotizar por WhatsApp →</a>
-        </article>
-        <article class="card">
-          <h3>Urgencias</h3>
-          <p>Atención el mismo día para dolor intenso, fracturas o infecciones.</p>
-          <a class="link wa" data-wa-text="Tengo una urgencia dental hoy.">Contactar ahora →</a>
-        </article>
+<!-- QUIÉNES SOMOS -->
+<section id="quienes" class="section">
+  <div class="wrap">
+    <div class="about-grid">
+      <figure class="about-photo">
+        <img src="images/Radiografia.png" 
+             alt="Equipo dental Sonrisa Viva">
+      </figure>
+      <div class="about-copy">
+        <h2 class="section-title">¿Quiénes somos?</h2>
+        <p>
+          Somos un equipo de especialistas comprometidos con tu salud bucal. 
+          Nuestra misión es ofrecer tratamientos de calidad, con tecnolgia y seguros para tu salud bucal, con un trato humano 
+          que haga sentir en confianza desde la primera cita.
+        </p>
+        <p>
+          En <strong>Clínica Dental Dr. Mayra Flores</strong> Trabajamos de la mano con especialistas con experiencia, tecnologia y pasion por tu salud bucal.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<!-- RESEÑAS -->
+<section id="resenas" class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Reseñas</h2>
+      <p class="section-sub">Lo que dicen nuestros pacientes.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- Formulario -->
+      <form id="reviewForm" class="review-form" autocomplete="on">
+        <h3 class="form-title">Cuéntanos tu experiencia</h3>
+
+        <label class="field">
+          <span>Nombre (opcional)</span>
+          <input type="text" name="name" maxlength="30" placeholder="Tu nombre">
+        </label>
+
+        <fieldset class="field stars" aria-label="Calificación de 1 a 5">
+          <legend>Calificación</legend>
+          <div class="stars-row">
+            <input type="radio" id="r5" name="rating" value="5" required>
+            <label for="r5" title="Excelente">★</label>
+
+            <input type="radio" id="r4" name="rating" value="4">
+            <label for="r4" title="Muy bien">★</label>
+
+            <input type="radio" id="r3" name="rating" value="3">
+            <label for="r3" title="Bien">★</label>
+
+            <input type="radio" id="r2" name="rating" value="2">
+            <label for="r2" title="Regular">★</label>
+
+            <input type="radio" id="r1" name="rating" value="1">
+            <label for="r1" title="Mejorable">★</label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span>Reseña</span>
+          <textarea name="message" rows="4" maxlength="400" required
+            placeholder="¿Qué te gustó? ¿Qué podríamos mejorar?"></textarea>
+        </label>
+
+        <button class="btn primary" type="submit">Enviar reseña</button>
+        <p class="muted" style="margin:8px 0 0">Al enviar autorizas publicar tu reseña en este sitio.</p>
+      </form>
+
+      <!-- Listado -->
+      <div class="reviews-list">
+        <ul id="reviewsUl" class="reviews-cards"></ul>
+        <div class="reviews-actions">
+          <button id="loadMoreReviews" class="btn ghost" type="button">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-sub">Planes claros. Tratamientos personalizados.</p>
+    </div>
+
+    <!-- TRES TABLAS (3 col desktop / 1 col móvil, alturas por contenido) -->
+    <div class="service-tables">
+      <!-- TABLA 1 -->
+      <article class="table-card table-card--a">
+        <h3 class="table-title">
+  <strong class="title">Especialista</strong>
+  <span class="subtitle">Cariología clinica</span>
+</h3>
+        <ul class="svc-list">
+          <li class="svc-item">
+            <button class="svc-name" type="button">Consulta de revisión</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Consulta de revisión.">Solicitar</a>
+            </span>
+            <div class="svc-more">Te checamos a detalle y te explicamos claro qué hay y qué no, sin rollo.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Endodoncia/Prótesis</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Endodoncia/Prótesis.">Solicitar</a>
+            </span>
+            <div class="svc-more">Cuando hay dolor o infección, salvamos la pieza y la rehabilitamos para que funcione bien.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Resinas</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Resinas.">Solicitar</a>
+            </span>
+            <div class="svc-more">Rellenos del color del diente para caries o fracturas, sin metal y con acabado natural.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Limpieza</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Limpieza.">Solicitar</a>
+            </span>
+            <div class="svc-more">Quitamos sarro y manchas; sales con la boca fresca y ligera.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Blanqueamiento</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Blanqueamiento.">Solicitar</a>
+            </span>
+            <div class="svc-more">Le subimos tonos a tu sonrisa cuidando el esmalte, sin sensibilidad extra.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Postes</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Postes.">Solicitar</a>
+            </span>
+            <div class="svc-more">Refuerzo interno del diente para sostener una corona o una resina grande.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Carillas</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Carillas.">Solicitar</a>
+            </span>
+            <div class="svc-more">Láminas delgadas que mejoran forma y color de los dientes frontales.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Cirugía apical</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Cirugía apical.">Solicitar</a>
+            </span>
+            <div class="svc-more">Tratamos la puntita de la raíz cuando hay infección terca que no cede.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- TABLA 2 -->
+      <article class="table-card table-card--b">
+        <h3 class="table-title">
+          <strong class="title">Especialista</strong><span class="subtitle">Ortodoncia y Cirugía</span>
+        </h3>
+        <ul class="svc-list">
+          <li class="svc-item">
+            <button class="svc-name" type="button">Ortodoncia</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Ortodoncia.">Solicitar</a>
+            </span>
+            <div class="svc-more">Alineamos tus dientes con plan claro por etapas; brackets o alineadores.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Brackets</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Brackets.">Solicitar</a>
+            </span>
+            <div class="svc-more">Clásicos y efectivos; pueden ser metálicos o estéticos según prefieras.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Cirugías de terceros molares</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Cirugías de terceros molares.">Solicitar</a>
+            </span>
+            <div class="svc-more">Quitamos muelas del juicio con técnica segura y recuperación guiada.</div>
+          </li>
+          <li class="svc-item">
+            <button class="svc-name" type="button">Extracciones</button>
+            <span class="cta-group">
+              <a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Extracciones.">Solicitar</a>
+            </span>
+            <div class="svc-more">Sacamos piezas que ya no se pueden salvar, con anestesia y cuidado.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- TABLA 3 (NIÑOS) — DIVIDIDA EN 2 COLUMNAS INTERNAS -->
+      <article class="table-card table-card--c">
+       <h3 class="table-title">
+          <strong class="title">Especialista</strong><span class="subtitle">Infantil</span>
+        </h3>
+
+        <div class="svc-columns">
+          <!-- Columna izquierda -->
+          <ul class="svc-list">
+            <li class="svc-item"><button class="svc-name" type="button">Limpieza</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Limpieza (niños).">Solicitar</a></span><div class="svc-more">Dejamos los dientes limpios y sin placa, rápido y sin drama.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Coronas</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Coronas (niños).">Solicitar</a></span><div class="svc-more">“Capuchitas” que protegen el diente cuando está muy gastado o cariado.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Pulpotomía</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Pulpotomía.">Solicitar</a></span><div class="svc-more">Quitamos la parte enferma del nervio en dientes de leche.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Pulpectomía</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Pulpectomía.">Solicitar</a></span><div class="svc-more">Tratamiento del nervio completo en dientes de leche cuando es necesario.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Extracciones simples</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Extracciones simples.">Solicitar</a></span><div class="svc-more">Sacamos el diente flojito o fácil, sin complicarla.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Extracción compleja</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Extracción compleja.">Solicitar</a></span><div class="svc-more">Cuando el diente está retenido o cuesta más trabajo, lo hacemos con calma y técnica.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Ortopedia</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Ortopedia.">Solicitar</a></span><div class="svc-more">Guiamos el crecimiento para que la mordida se forme derechita.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Coronas estéticas</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Coronas estéticas.">Solicitar</a></span><div class="svc-more">Coronas que se ven naturales y aguantan el trote del día a día.</div></li>
+          </ul>
+
+          <!-- Columna derecha -->
+          <ul class="svc-list">
+            <li class="svc-item"><button class="svc-name" type="button">Frente estético</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Frente estético.">Solicitar</a></span><div class="svc-more">Armonizamos los dientes frontales para una sonrisa linda.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Poste</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Poste (niños).">Solicitar</a></span><div class="svc-more">Refuerzo interno para sostener una coronita cuando hace falta.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Sedación</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Sedación.">Solicitar</a></span><div class="svc-more">Para que el peque esté tranquilo y el tratamiento fluya.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Selladores</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Selladores.">Solicitar</a></span><div class="svc-more">Protección en muelas para evitar caries futuras.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Periodoncia</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Periodoncia (niños).">Solicitar</a></span><div class="svc-more">Cuidamos encías y huesito cuando hay inflamación.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Implantes</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Implantes (niños).">Solicitar</a></span><div class="svc-more">Para reponer dientes perdidos (según edad y valoración).</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Raspado y alisado radiculares</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Raspado y alisado radiculares.">Solicitar</a></span><div class="svc-more">Limpieza profunda debajo de las encías para recuperar salud.</div></li>
+            <li class="svc-item"><button class="svc-name" type="button">Injerto óseo</button><span class="cta-group"><a class="tiny-btn wa" data-wa-text="Hola, quiero solicitar el servicio de Injerto óseo.">Solicitar</a></span><div class="svc-more">Agregamos hueso donde hace falta para futuros tratamientos.</div></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
   <!-- ANTES / DESPUÉS -->
   <section id="before" class="section section-alt">
@@ -145,43 +340,7 @@
     </div>
   </section>
 
-  <!-- AGENDA (Calendly a la izquierda + beneficios a la derecha) -->
-  <section id="agenda" class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="section-title">Agenda tu cita</h2>
-        <p class="section-sub">Calendario en español + recordatorios automáticos.</p>
-      </div>
-
-      <div class="agenda-grid">
-        <div class="agenda-widget" aria-label="Calendario de citas">
-          <!-- Reemplaza data-url con el tuyo. Agrega ?hide_gdpr_banner=1&locale=es -->
-          <iframe
-            title="Calendario de citas"
-            src="https://calendly.com/usuario-dentista/valoracion?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=0b7d7a&locale=es"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
-        <div class="agenda-copy">
-          <h3>Beneficios de agendar aquí</h3>
-          <ul class="benefits">
-            <li>Confirmación y recordatorios automáticos.</li>
-            <li>Reprograma con un clic si surge un imprevisto.</li>
-            <li>Indicaciones previas al tratamiento directo a tu WhatsApp.</li>
-            <li>Sin llamadas — gestión 24/7 desde tu celular.</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn primary" href="#agenda">Elegir horario</a>
-            <a class="btn ghost wa" data-wa-text="Hola, ¿tienen disponibilidad hoy?">Preguntar por hoy</a>
-          </div>
-          <small class="note">Si no ves horarios, escríbenos por WhatsApp y te abrimos un espacio.</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- FAQ -->
   <section id="faq" class="section section-alt">
     <div class="wrap">
@@ -194,8 +353,8 @@
         <p>No. Usamos ultrasonido y profilaxis suave. Si eres muy sensible, podemos aplicar anestesia tópica.</p>
       </details>
       <details class="faq">
-        <summary>¿Aceptan tarjetas?</summary>
-        <p>Sí. Aceptamos tarjetas y transferencias. También manejamos pago por sesión en ortodoncia.</p>
+        <summary>¿Metodos de pago?</summary>
+        <p>Efectivo y transferencia.</p>
       </details>
       <details class="faq">
         <summary>¿Hacen urgencias?</summary>
@@ -203,29 +362,7 @@
       </details>
     </div>
   </section>
-<!-- QUIÉNES SOMOS -->
-<section id="quienes" class="section">
-  <div class="wrap">
-    <div class="about-grid">
-      <figure class="about-photo">
-        <img src="https://img.freepik.com/premium-photo/portrait-female-dentist_191555-4435.jpg" 
-             alt="Equipo dental Sonrisa Viva">
-      </figure>
-      <div class="about-copy">
-        <h2 class="section-title">Quiénes somos</h2>
-        <p>
-          Somos un equipo de profesionales comprometidos con tu salud bucal. 
-          Nuestra misión es ofrecer tratamientos modernos y seguros, con un trato humano 
-          que te haga sentir en confianza desde la primera cita.
-        </p>
-        <p>
-          En <strong>Clínica Dental Dr. Mayra Flores</strong> combinamos experiencia, 
-          tecnología y pasión por las sonrisas.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
   <!-- CONTACTO -->
   <section id="contacto" class="section">
@@ -233,32 +370,33 @@
       <div class="contact-grid">
         <div>
           <h2 class="section-title">Contacto</h2>
-          <p class="muted">Estamos en León, GTO. A 2 cuadras de [Punto de referencia].</p>
+          
           <ul class="contact-list">
-            <li><strong>Teléfono:</strong> <a class="wa" data-wa-text="Hola, quiero más información.">+52 477 000 0000</a></li>
-            <li><strong>Dirección:</strong> Calle Ejemplo 123, Col. Centro</li>
+            <li><strong>Teléfono:</strong> <a class="wa" data-wa-text="Hola, quiero más información.">+52 477 220 9707</a></li>
+            <li><strong>Correo</strong> <a >mayraohcany@hotmail.com</a></li>
             <li><strong>Horario:</strong> L–V 10:00–19:00, Sáb 10:00–14:00</li>
           </ul>
           <div class="cta-row">
             <a class="btn primary wa" data-wa-text="Quiero agendar consulta.">Agendar por WhatsApp</a>
-            <a class="btn ghost" href="#agenda">Ver calendario</a>
           </div>
         </div>
-        <!-- MAPA (RESPONSIVO) -->
+<!-- MAPA (RESPONSIVO, SIN SCROLL) -->
 <div class="map-wrap">
   <iframe
     class="map"
-    src="https://www.google.com/maps/embed?pb=!4v1914592362028!6m8!1m7!1sgjJDOqCyh8MFWHlpU0Ia9w!2m2!1d21.15851134832044!2d-101.6558922957532!3f124.94397008073197!4f-1.27538513284631!5f0.7820865974627469"
-    allowfullscreen
+    title="Ubicación"
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
+    allowfullscreen
+    src="https://www.google.com/maps/embed?pb=!4v1914620288691!6m8!1m7!1sK7HmlpShZVlzz7IoOZF9uA!2m2!1d21.16011231099916!2d-101.6550377226309!3f153.90028856463462!4f-0.26565102022632914!5f0.7820865974627469">
+  </iframe>
 </div>
+
 
 
   <footer class="footer">
     <div class="wrap footer-row">
-      <p>© <span id="y"></span> MozbyTec· Hecho en León,</p>
+      <p>© <span id="y"></span> MozbyTec· Hecho en León,Guanajuato.</p>
       <div class="socials">
         <a target="_blank" rel="noopener" href="#" aria-label="Instagram">IG</a>
         <a target="_blank" rel="noopener" href="#" aria-label="Facebook">FB</a>
