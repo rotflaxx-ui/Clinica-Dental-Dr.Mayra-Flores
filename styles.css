@@ -198,3 +198,39 @@ body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-fon
 /* 10) Pequeños refinamientos de color/contraste */
 .section-sub{ color: #5a6b69; }            /* un pelín más oscuro que var(--muted) */
 .link:hover{ opacity: 1; text-decoration: underline; }
+/* === FIX MÓVIL: agenda + mapa + espaciado === */
+@media (max-width: 680px){
+  /* Espaciado general más compacto */
+  .section{ padding-block: 40px; }
+  .wrap{ padding-inline: 16px; }
+
+  /* HERO más corto en cel */
+  .hero{ padding-block: 28px; }
+  .hero-copy h1{ font-size: clamp(22px, 7vw, 30px); }
+  .hero-copy p{ font-size: .95rem; max-width: 48ch; }
+
+  /* Agenda en 1 columna ya está OK, pero bajamos el alto del calendario */
+  .agenda-widget{ max-width: 100%; }
+  .agenda-widget iframe{
+    height: 420px !important;   /* antes 580/640, ahora realmente compacto */
+  }
+
+  /* Tarjetas: menos aire para que no alarguen de más */
+  .cards{ gap: 12px; }
+  .card{ padding: 14px; }
+
+  /* Quiénes somos: aire y lectura */
+  .about-grid{ gap: 16px; }
+  .about-copy p{ font-size: .975rem; }
+
+  /* Mapa: más alto en cel para que sea usable */
+  .map{
+    height: 420px !important;   /* pisa el clamp de escritorio */
+  }
+}
+
+/* Extra-chico (teléfonos muy estrechos) */
+@media (max-width: 380px){
+  .agenda-widget iframe{ height: 360px !important; }
+  .map{ height: 360px !important; }
+}
