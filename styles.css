@@ -20,7 +20,7 @@ body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-fon
 .section-sub{color:var(--muted);margin:0}
 
 /* ===== NAV ===== */
-.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.86);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.1) blur(6px)}
+.nav{position:sticky;top:0;z-index:10;background:rgba(27, 162, 151, 0.86);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.1) blur(6px)}
 .nav-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
 .logo{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
 .logo-mark{width:28px;height:28px;background:var(--brand);border-radius:8px;box-shadow:inset 0 -6px 14px rgba(0,0,0,.18)}
