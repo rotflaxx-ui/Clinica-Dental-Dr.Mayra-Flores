@@ -234,3 +234,27 @@ body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-fon
   .agenda-widget iframe{ height: 360px !important; }
   .map{ height: 360px !important; }
 }
+/* === MAPA RESPONSIVO PARA STREET VIEW === */
+.map-wrap{
+  position: relative;
+  width: 100%;
+  /* Street View necesita más alto que un mapa normal */
+  padding-bottom: 70%;            /* ajústalo: 62–80% según necesites */
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.map{
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* En móviles muy angostos, dale aún más alto */
+@media (max-width: 420px){
+  .map-wrap{ padding-bottom: 80%; }
+}
